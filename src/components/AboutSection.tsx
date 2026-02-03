@@ -80,25 +80,25 @@ export default function AboutSection() {
           <div className="grid grid-cols-4 gap-2 sm:gap-4 px-4">
             <div className="text-center">
               <div className="font-heading font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary mb-0.5 sm:mb-1">
-                [YEARS]+
+                25+
               </div>
               <div className="text-xs sm:text-sm text-muted-foreground">Years Exp.</div>
             </div>
             <div className="text-center">
               <div className="font-heading font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary mb-0.5 sm:mb-1">
-                [CLIENTS]+
+                12K+
               </div>
               <div className="text-xs sm:text-sm text-muted-foreground">Clients</div>
             </div>
             <div className="text-center">
               <div className="font-heading font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary mb-0.5 sm:mb-1">
-                $[FUNDED]+
+                $3B+
               </div>
               <div className="text-xs sm:text-sm text-muted-foreground">Funded</div>
             </div>
             <div className="text-center">
               <div className="font-heading font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary mb-0.5 sm:mb-1">
-                [RATING]
+                4.9
               </div>
               <div className="text-xs sm:text-sm text-muted-foreground">Rating</div>
             </div>
