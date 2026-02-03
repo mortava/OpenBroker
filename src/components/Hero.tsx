@@ -16,23 +16,9 @@ export default function Hero() {
       className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center gradient-mesh overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:48px_48px] sm:bg-[size:64px_64px]"
-        aria-hidden="true"
-      />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 md:py-28">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Badge */}
-          <div
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium mb-5 sm:mb-6 animate-fade-in"
-            style={{ animationDelay: "0.1s" }}
-          >
-            <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
-            <span>Trusted by Thousands of Mid-South Homeowners</span>
-          </div>
-
           {/* Main Heading */}
           <h1
             id="hero-heading"
@@ -52,26 +38,18 @@ export default function Hero() {
             Experience the fastest, most seamless mortgage process in the industry.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-in"
+            className="flex items-center justify-center animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
             <Button
               size="lg"
               onClick={() => scrollToSection("prequal")}
-              className="text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 shadow-lg hover:shadow-xl transition-shadow w-full sm:w-auto"
+              className="text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 shadow-lg hover:shadow-xl transition-shadow"
             >
               Get Pre-Qualified
               <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => scrollToSection("rates")}
-              className="text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 w-full sm:w-auto"
-            >
-              Check My Rate
             </Button>
           </div>
 

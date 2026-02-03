@@ -67,14 +67,6 @@ export default function Header() {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => scrollToSection("rates")}
-              className="text-foreground/80 hover:text-foreground text-sm"
-            >
-              Rate Quote
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
               onClick={() => scrollToSection("about")}
               className="text-foreground/80 hover:text-foreground text-sm"
             >
@@ -122,12 +114,6 @@ export default function Header() {
                 className="block w-full text-left px-3 py-2.5 rounded-lg hover:bg-muted transition-colors text-foreground text-sm"
               >
                 Get Pre-Qualified
-              </button>
-              <button
-                onClick={() => scrollToSection("rates")}
-                className="block w-full text-left px-3 py-2.5 rounded-lg hover:bg-muted transition-colors text-foreground text-sm"
-              >
-                Rate Quote
               </button>
               <button
                 onClick={() => scrollToSection("about")}
