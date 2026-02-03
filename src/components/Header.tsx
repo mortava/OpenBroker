@@ -41,16 +41,16 @@ export default function Header() {
           <a
             href="#"
             className="flex items-center gap-2 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
-            aria-label="[COMPANY_NAME] - Home"
+            aria-label="OpenBroker - Home"
           >
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-sm">
               <span className="text-white font-heading font-bold text-[10px] sm:text-xs">
-                [LOGO]
+                OB
               </span>
             </div>
             <span className="font-heading font-semibold text-sm sm:text-base text-foreground">
-              <span className="hidden sm:inline">[COMPANY_NAME]</span>
-              <span className="inline sm:hidden">[COMPANY_SHORT_NAME]</span>
+              <span className="hidden sm:inline">OpenBroker</span>
+              <span className="inline sm:hidden">OpenBroker</span>
             </span>
           </a>
 

@@ -43,7 +43,7 @@ export default function AboutSection() {
             id="about-heading"
             className="font-heading font-semibold text-2xl sm:text-3xl md:text-4xl text-foreground mb-3 sm:mb-4 text-balance"
           >
-            Why Choose [COMPANY_SHORT_NAME]
+            Why Choose OpenBroker
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground text-pretty">
             We combine cutting-edge technology with personalized service to make

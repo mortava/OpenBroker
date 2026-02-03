@@ -61,37 +61,36 @@ export default function Footer() {
           {/* Company Info */}
           <div className="text-center space-y-3">
             <p className="text-background/90 text-xs sm:text-sm">
-              &copy;2026 [PLATFORM_PROVIDER]. All rights reserved.
+              &copy;2026 TraceAos. All rights reserved.
             </p>
 
             <div className="text-background/80 text-xs sm:text-sm leading-relaxed">
               <p className="mb-2">
                 This site was built for:{" "}
                 <strong className="text-background">
-                  [COMPANY_LEGAL_NAME]
+                  OpenBroker
                 </strong>{" "}
-                [COMPANY_NMLS]
+                [nmls]
               </p>
               <p className="mb-1.5">
-                [COMPANY_ADDRESS]
+                [Add]
               </p>
               <p className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-0.5 sm:gap-2">
                 <span>Need Help? Contact:{" "}
-                <strong className="text-background">[AGENT_NAME]</strong>{" "}
-                [AGENT_NMLS]</span>
+                <strong className="text-background">OB AI</strong></span>
                 <span className="hidden sm:inline">|</span>
                 <a
-                  href="tel:[PHONE]"
+                  href="tel:[Call]"
                   className="hover:text-background underline underline-offset-2"
                 >
-                  [PHONE]
+                  [Call]
                 </a>
                 <span className="hidden sm:inline">|</span>
                 <a
-                  href="mailto:[EMAIL]"
+                  href="mailto:sales@qualr.com"
                   className="hover:text-background underline underline-offset-2"
                 >
-                  [EMAIL]
+                  sales@qualr.com
                 </a>
               </p>
             </div>

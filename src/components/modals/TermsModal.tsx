@@ -107,7 +107,7 @@ export default function TermsModal({ open, onOpenChange }: TermsModalProps) {
             </h3>
             <p>
               All content on this website, including text, graphics, logos, and
-              images, is the property of [COMPANY_LEGAL_NAME] or its
+              images, is the property of OpenBroker or its
               content suppliers and is protected by copyright and other
               intellectual property laws. Unauthorized use or reproduction is
               prohibited.
@@ -121,7 +121,7 @@ export default function TermsModal({ open, onOpenChange }: TermsModalProps) {
               7. Limitation of Liability
             </h3>
             <p>
-              To the fullest extent permitted by law, [COMPANY_LEGAL_NAME] shall not be liable for any direct, indirect,
+              To the fullest extent permitted by law, OpenBroker shall not be liable for any direct, indirect,
               incidental, special, consequential, or punitive damages arising
               from your use of or inability to use this website or any
               information provided herein.
@@ -136,9 +136,9 @@ export default function TermsModal({ open, onOpenChange }: TermsModalProps) {
             </h3>
             <p>
               These Terms of Use shall be governed by and construed in
-              accordance with the laws of the State of [STATE], without regard
+              accordance with the laws of the State of CA, without regard
               to its conflict of law provisions. Any disputes arising from these
-              terms shall be resolved in the courts of [COUNTY_STATE].
+              terms shall be resolved in the courts of Palm Beach County, CA.
             </p>
           </section>
 
@@ -150,7 +150,7 @@ export default function TermsModal({ open, onOpenChange }: TermsModalProps) {
             </h3>
             <p>
               If you have any questions about these Terms of Use, please contact
-              us at [EMAIL] or call [PHONE].
+              us at sales@qualr.com or call [Call].
             </p>
           </section>
         </div>

@@ -170,12 +170,12 @@ export default function PrivacyModal({ open, onOpenChange }: PrivacyModalProps) 
             </p>
             <div className="mt-3 p-4 bg-muted/50 rounded-lg">
               <p className="font-medium text-foreground">
-                [COMPANY_LEGAL_NAME]
+                OpenBroker
               </p>
-              <p>[ADDRESS_LINE_1]</p>
-              <p>[CITY_STATE_ZIP]</p>
-              <p>Email: [EMAIL]</p>
-              <p>Phone: [PHONE]</p>
+              <p>[Add]</p>
+              <p>CA</p>
+              <p>Email: sales@qualr.com</p>
+              <p>Phone: [Call]</p>
             </div>
           </section>
         </div>

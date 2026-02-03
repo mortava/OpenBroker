@@ -9,9 +9,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "[COMPANY_NAME] | Your Trusted Mortgage Partner",
+  title: "OpenBroker | Your Trusted Mortgage Partner",
   description:
-    "Get pre-qualified in minutes with our AI-powered mortgage assistant. [COMPANY_NAME] offers competitive rates and personalized service.",
+    "Get pre-qualified in minutes with our AI-powered mortgage assistant. OpenBroker offers competitive rates and personalized service.",
 };
 
 export default function RootLayout({

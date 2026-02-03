@@ -85,10 +85,10 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
                 <div>
                   <p className="text-muted-foreground">Phone</p>
                   <a
-                    href="tel:[PHONE]"
+                    href="tel:[Call]"
                     className="text-foreground hover:text-primary transition-colors"
                   >
-                    [PHONE]
+                    [Call]
                   </a>
                 </div>
               </div>
@@ -99,10 +99,10 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
                 <div>
                   <p className="text-muted-foreground">Email</p>
                   <a
-                    href="mailto:[EMAIL]"
+                    href="mailto:sales@qualr.com"
                     className="text-foreground hover:text-primary transition-colors text-xs sm:text-sm break-all"
                   >
-                    [EMAIL]
+                    sales@qualr.com
                   </a>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export default function ContactModal({ open, onOpenChange }: ContactModalProps) 
                 <div>
                   <p className="text-muted-foreground">Address</p>
                   <span className="text-foreground text-xs">
-                    [ADDRESS_SHORT]
+                    [Add]
                   </span>
                 </div>
               </div>
