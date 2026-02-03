@@ -40,6 +40,30 @@ module.exports = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
       },
+      animation: {
+        'float': 'float 3s ease-in-out infinite',
+        'gentle-pulse': 'gentle-pulse 4s ease-in-out infinite',
+        'fade-in-up': 'fade-in-up 300ms ease-out forwards',
+        'fade-out-up': 'fade-out-up 250ms ease-out forwards',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+        'gentle-pulse': {
+          '0%, 100%': { opacity: '0.9' },
+          '50%': { opacity: '1' },
+        },
+        'fade-in-up': {
+          from: { opacity: '0', transform: 'translateY(12px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-out-up': {
+          from: { opacity: '1', transform: 'translateY(0)' },
+          to: { opacity: '0', transform: 'translateY(-20px)' },
+        },
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
