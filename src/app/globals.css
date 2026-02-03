@@ -130,6 +130,22 @@ html {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+/* Clean iframe container - no grey bars */
+iframe {
+  display: block;
+  background: white;
+  color-scheme: light;
+}
+
+/* Hide scrollbar in carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <main id="main-content" role="main">
         <ChatInterface
-          iframeSrc="https://grow.g1wins.com/pricing-engine-embed?key=g1_live_Q6-g4lBz_gPbVWHonwS2Fowu0GVb9Dhe&borrowerMode=true&tab=ai"
+          iframeSrc="https://obagent.qualr.com"
         />
         <AboutSection />
       </main>

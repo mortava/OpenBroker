@@ -217,22 +217,20 @@ export default function ChatInterface({ iframeSrc }: ChatInterfaceProps) {
 
   // Conversation state
   return (
-    <section className="min-h-screen flex flex-col bg-background">
+    <section className="h-screen flex flex-col bg-background overflow-hidden">
       {/* Messages area */}
-      <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-6">
-        <div className="w-full max-w-[640px] md:max-w-[720px] mx-auto space-y-4">
+      <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-4">
+        <div className="w-full max-w-[640px] md:max-w-[720px] lg:max-w-[840px] mx-auto space-y-4">
           {messages.map((msg) => {
             if (msg.type === "iframe") {
               return (
-                <div key={msg.id} className="w-full animate-fade-in-up">
-                  <p className="text-xs text-muted-foreground mb-2 px-1">
-                    Starting your pre-qualification process...
-                  </p>
-                  <div className="card-shadow rounded-xl overflow-hidden bg-white border border-border/50">
+                <div key={msg.id} className="w-full animate-fade-in-up -mx-4 sm:-mx-6 px-0" style={{ width: "calc(100% + 2rem)", maxWidth: "none" }}>
+                  <div className="rounded-2xl overflow-hidden bg-white border border-border/30 shadow-sm">
                     <iframe
                       src={iframeSrc}
                       title="Pre-Qualification Assistant"
-                      className="w-full h-[480px] sm:h-[580px] md:h-[680px] lg:h-[780px] border-0"
+                      className="w-full border-0 block bg-white"
+                      style={{ height: "calc(100vh - 140px)", minHeight: "480px" }}
                       loading="lazy"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     />
