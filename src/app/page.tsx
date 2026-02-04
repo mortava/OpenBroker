@@ -1,17 +1,18 @@
-import ChatInterface from "@/components/ChatInterface";
-import AboutSection from "@/components/AboutSection";
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import FeaturesSection from "@/components/FeaturesSection";
+import StatsSection from "@/components/StatsSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
+      <Header />
       <main id="main-content" role="main">
-        <ChatInterface
-          iframeSrc="https://obagent.qualr.com"
-        />
-        <AboutSection />
+        <HeroSection />
+        <FeaturesSection />
+        <StatsSection />
       </main>
-
       <Footer />
     </>
   );

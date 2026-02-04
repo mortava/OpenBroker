@@ -5,13 +5,14 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  viewportFit: "cover",
   themeColor: "#ffffff",
 };
 
 export const metadata: Metadata = {
-  title: "OpenBroker | Your Trusted Mortgage Partner",
+  title: "OpenBroker AI | Your AI Mortgage Assistant",
   description:
-    "Get pre-qualified in minutes with our AI-powered mortgage assistant. OpenBroker offers competitive rates and personalized service.",
+    "Get pre-qualified in minutes with our AI-powered mortgage assistant. Ask anything about mortgages, rates, or the home buying process.",
 };
 
 export default function RootLayout({
@@ -25,10 +26,10 @@ export default function RootLayout({
         <meta name="color-scheme" content="light" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body className="min-h-screen">
-        <a href="#chat-input" className="skip-link">
+        <a href="#hero" className="skip-link">
           Skip to main content
         </a>
         {children}

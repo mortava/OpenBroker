@@ -1,136 +1,159 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
+const navItems = [
+  { label: "Home", href: "#hero" },
+  { label: "Features", href: "#features" },
+  { label: "Stats", href: "#stats" },
+  { label: "Contact", href: "#footer" },
+];
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("#hero");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+  useEffect(() => {
+    const sectionIds = ["hero", "features", "stats", "footer"];
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${id}`);
+          }
+        },
+        { threshold: 0.3 }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
+  const handleNavClick = (href: string) => {
+    setMenuOpen(false);
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleGetStarted = () => {
+    const input = document.querySelector<HTMLInputElement>("#chat-input");
+    if (input) {
+      input.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => input.focus(), 600);
     }
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled ? "glass shadow-sm py-2 sm:py-3" : "bg-transparent py-3 sm:py-4"
-      }`}
-      role="banner"
+    <nav
+      className={`glass-nav sticky top-0 z-[100] h-14 ${scrolled ? "scrolled" : ""}`}
+      role="navigation"
+      aria-label="Main navigation"
     >
-      <nav
-        className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8"
-        role="navigation"
-        aria-label="Main navigation"
-      >
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a
-            href="#"
-            className="flex items-center gap-2 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg"
-            aria-label="OpenBroker - Home"
+      <div className="mx-auto flex h-full max-w-[1120px] items-center justify-between px-4 md:px-6 lg:px-8">
+        {/* Logo */}
+        <div className="flex items-center">
+          <span className="text-[1.1rem] font-bold" style={{ color: "var(--color-text-primary)" }}>
+            OpenBroker
+          </span>
+          <span
+            className="relative -top-[5px] ml-1 inline-block rounded-md px-1.5 py-[2px] text-[0.6rem] font-semibold text-white"
+            style={{ background: "linear-gradient(135deg, #2563EB, #3B82F6)", borderRadius: "6px" }}
           >
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-sm">
-              <span className="text-white font-heading font-bold text-[10px] sm:text-xs">
-                OB
-              </span>
-            </div>
-            <span className="font-heading font-semibold text-sm sm:text-base text-foreground">
-              <span className="hidden sm:inline">OpenBroker</span>
-              <span className="inline sm:hidden">OpenBroker</span>
-            </span>
-          </a>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-0.5">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => scrollToSection("prequal")}
-              className="text-foreground/80 hover:text-foreground text-sm"
-            >
-              Get Pre-Qualified
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => scrollToSection("about")}
-              className="text-foreground/80 hover:text-foreground text-sm"
-            >
-              About
-            </Button>
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button
-              onClick={() => scrollToSection("prequal")}
-              className="shadow-md"
-            >
-              Start Now
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden h-8 w-8"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </Button>
+            AI
+          </span>
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div
-            id="mobile-menu"
-            className="md:hidden absolute top-full left-0 right-0 glass border-t border-border/50 shadow-lg animate-fade-in"
-          >
-            <div className="px-3 py-3 space-y-1">
-              <button
-                onClick={() => scrollToSection("prequal")}
-                className="block w-full text-left px-3 py-2.5 rounded-lg hover:bg-muted transition-colors text-foreground text-sm"
-              >
-                Get Pre-Qualified
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="block w-full text-left px-3 py-2.5 rounded-lg hover:bg-muted transition-colors text-foreground text-sm"
-              >
-                About
-              </button>
-              <Button
-                className="w-full mt-2"
-                onClick={() => scrollToSection("prequal")}
-              >
-                Start Now
-              </Button>
-            </div>
-          </div>
-        )}
-      </nav>
-    </header>
+        {/* Center Pill Nav (desktop only) */}
+        <div className="hidden lg:flex items-center rounded-full p-[3px] gap-[2px]" style={{ background: "#F1F5F9" }}>
+          {navItems.map((item) => (
+            <button
+              key={item.href}
+              onClick={() => handleNavClick(item.href)}
+              className="rounded-full px-4 py-1.5 text-[0.8125rem] font-medium transition-all duration-200"
+              style={{
+                color: activeSection === item.href ? "var(--color-text-primary)" : "var(--color-text-secondary)",
+                background: activeSection === item.href ? "white" : "transparent",
+                boxShadow: activeSection === item.href ? "0 1px 3px rgba(0,0,0,0.06)" : "none",
+              }}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Right: Get Started (desktop) */}
+        <button
+          onClick={handleGetStarted}
+          className="btn-accent hidden lg:inline-flex items-center rounded-full px-5 py-2 text-sm font-semibold"
+          style={{ boxShadow: "0 2px 8px rgba(37,99,235,0.25)" }}
+        >
+          Get Started
+        </button>
+
+        {/* Mobile Hamburger */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="lg:hidden flex items-center justify-center w-11 h-11 bg-transparent border-none cursor-pointer"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            {menuOpen ? (
+              <>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </>
+            ) : (
+              <>
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </>
+            )}
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {menuOpen && (
+        <div
+          className="fixed left-0 right-0 bottom-0 z-[99] flex flex-col items-center justify-center gap-7 lg:hidden"
+          style={{
+            top: "56px",
+            background: "rgba(255,255,255,0.98)",
+            WebkitBackdropFilter: "blur(20px)",
+            backdropFilter: "blur(20px)",
+          }}
+        >
+          {navItems.map((item) => (
+            <button
+              key={item.href}
+              onClick={() => handleNavClick(item.href)}
+              className="text-2xl font-bold border-none bg-transparent cursor-pointer"
+              style={{ color: "var(--color-text-primary)", textDecoration: "none", fontFamily: "inherit" }}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </nav>
   );
 }
