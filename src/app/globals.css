@@ -236,6 +236,70 @@ body::before {
 }
 
 /* ========================================
+   GLOWING LAUNCH BUTTON
+   ======================================== */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(37, 99, 235, 0.4),
+      0 0 40px rgba(37, 99, 235, 0.2),
+      0 0 60px rgba(37, 99, 235, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(37, 99, 235, 0.6),
+      0 0 60px rgba(37, 99, 235, 0.4),
+      0 0 90px rgba(37, 99, 235, 0.2);
+  }
+}
+
+.btn-glow {
+  background: linear-gradient(135deg, #2563EB, #3B82F6);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  animation: glow-pulse 2s ease-in-out infinite;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-glow:hover {
+  transform: scale(1.05);
+}
+
+.btn-glow:active {
+  transform: scale(0.98);
+}
+
+/* ========================================
+   IFRAME CONTAINER
+   ======================================== */
+.iframe-container {
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.iframe-container iframe {
+  display: block;
+  width: 100%;
+  border: none;
+  background: white;
+}
+
+/* ========================================
    CARD TOP ACCENT LINE
    ======================================== */
 .glass-card::before {
