@@ -222,7 +222,7 @@ export default function HeroSection() {
           {/* Iframe */}
           <div className="iframe-container">
             <iframe
-              src="https://preview--strt.base44.app/FormView?f=start1.com"
+              src="https://dub.sh/strt"
               title="MyLoan Builder - AI Mortgage Assistant"
               style={{
                 height: iframeHeight,
